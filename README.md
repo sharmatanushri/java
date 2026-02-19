@@ -47,9 +47,9 @@ class Factorial{
 }
     
 ```
-## assi-2
 <img width="797" height="453" alt="image" src="https://github.com/user-attachments/assets/ab6cd1ff-fbb7-4e5e-8c41-7c344fc0c7c8" />
 
+## assi-2
 ```
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
