@@ -1,7 +1,8 @@
 [Program-1  Program to find Factorial](#assi-1)
+
 [Program-2  Program to check armstrong number](#assi-2)
 
-##assi-1
+## assi-1
 ```
 # 
 package com.mycompany.pilani;
@@ -46,7 +47,7 @@ class Factorial{
 }
     
 ```
-##assi-2
+## assi-2
 <img width="797" height="453" alt="image" src="https://github.com/user-attachments/assets/ab6cd1ff-fbb7-4e5e-8c41-7c344fc0c7c8" />
 
 ```
