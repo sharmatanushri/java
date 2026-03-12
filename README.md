@@ -1,18 +1,16 @@
-[Program-1  Program to find Factorial](#assi-1)
+[Program-1  Program to perform arithmatic operation on numbers using classes and objects](#assi-1)
 
-[Program-2  Program to check armstrong number](#assi-2)
+[Program-2  Program to perform addition of distances where each distance is given in m,cm,mm(test result in  by creation of object in main class](#assi-2)
 
-[Program-3  Program to perform arithmatic operation on numbers using classes and objects](#assi-3)
+[Program-3  Program to perform addition of distances where each distance is given in m,cm(test result in  by creation of object in main class](#assi-3)
 
-[Program-4  Program to perform addition of distances where each distance is given in m,cm,mm(test result in  by creation of object in main class](#assi-4)
+[Program-4  Program to perform addition of times where each time is given in hr,min,sec(test result in  by creation of object in main class](#assi-4)
 
-[Program-5  Program to perform addition of distances where each distance is given in m,cm(test result in  by creation of object in main class](#assi-5)
+[Program-5  Program to perform addition of times where each time is given in hr,min(test result in  by creation of object in main class](#assi-5)
 
-[Program-6  Program to perform addition of times where each time is given in hr,min,sec(test result in  by creation of object in main class](#assi-6)
+[Program-6  Colect codes of five programs in c language and convert to java using object and classes in single program](#assi-6)
 
-[Program-7  Program to perform addition of times where each time is given in hr,min(test result in  by creation of object in main class](#assi-7)
 
-[Program-8  Colect codes of five programs in c language and convert to java using object and classes in single program](#assi-8)
 
 
 
@@ -20,107 +18,6 @@
 
 
 ## assi-1
-```
-# 
-package com.mycompany.pilani;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author IBM17
- */
-  import java.util.Scanner;
-public class FactorialMain{ public static void main(String []args)
-{Factorial f=new Factorial();
-f.input();
-f.output();
-}}
-class Factorial{
-    int num;
-    int facto;
-    int fact(int num)
-    {
-        if(num==0 ||num==1)
-        {
-            return 1;
-        }
-        else
-        return num*fact(num-1);
-    }
-    void input()
-    {Scanner sc=new Scanner(System.in);
-    System.out.println("enter number: ");
-    num=sc.nextInt();
-    facto=fact(num);
-    }
-    void output()
-    {
-      System.out.println("factorial is   "+facto);
-    }
-}
-    
-```
-<img width="797" height="453" alt="image" src="https://github.com/user-attachments/assets/ab6cd1ff-fbb7-4e5e-8c41-7c344fc0c7c8" />
-
-## assi-2
-```
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.pilani;
-
-import java.util.Scanner;
-
-/**
- *
- * @author IBM17
- */
-
-public  class ArmMain 
-{       public static void main(String args[])
-        {Armnocheck a1= new Armnocheck();
-        a1.input();
-        a1.isarm();
-        }
-}
-class Armnocheck
-{
-   int num;
-   void isarm()
-   {    int digits= countd(num);
-        if(armsum(num,digits)==num)
-            System.out.println(" no is armstrong");
-        else
-            System.out.println(" no isnot armstrong");
-    }
-   void input()
-     { Scanner sc=new Scanner(System.in);
-       System.out.println("enter a no:");
-       num=sc.nextInt();
-     }
-   int countd(int num)
-       {
-           if(num==0)
-                return 0;
-           return 1+countd(num/10);
-       }
-   int armsum(int num,int digits)
-       {
-           if(num==0)
-                return 0;
-           return (int)Math.pow(num%10,digits)+armsum(num/10,digits);
-        }
-}
-
-```
-<img width="795" height="482" alt="image" src="https://github.com/user-attachments/assets/b71caddd-08ec-4204-8ddf-8a32ab86ef6c" />
-
-## assi-3
 ```
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -182,7 +79,7 @@ class calc
 ```
 <img width="746" height="350" alt="image" src="https://github.com/user-attachments/assets/2cc592d7-2105-4133-8303-5b686da8f28a" />
 
-## assi-4
+## assi-2
 ```
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -264,7 +161,7 @@ class Dist{
 ```
 <img width="866" height="613" alt="image" src="https://github.com/user-attachments/assets/7257188b-a300-42a6-b559-0610ba294b0f" />
 
-## assi-5
+## assi-3
 ```
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -341,7 +238,7 @@ class Dist1{
 ```
 <img width="828" height="559" alt="image" src="https://github.com/user-attachments/assets/28ddc39a-2e57-4cab-88d4-347966bf717d" />
 
-## assi-6
+## assi-4
 ```
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -422,7 +319,7 @@ class Time{
 ```
 <img width="962" height="630" alt="image" src="https://github.com/user-attachments/assets/1e619e2d-0cfc-4c62-8a48-765829fd8479" />
 
-## assi-7
+## assi-5
 ```
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -498,9 +395,220 @@ class Time1{
 ```
 <img width="899" height="502" alt="image" src="https://github.com/user-attachments/assets/e4ff7edd-f955-4b81-97a8-1265910b947f" />
 
-## assi-8
+## assi-6
 ```
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.mycompany.pilani;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author IBM17
+ */
+public class CombinedBase {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("\n--- Armstrong Number Check ---");
+        ArmnocheckC a1 = new ArmnocheckC();
+        a1.input(sc);
+        a1.isarm();
+
+        System.out.println("\n--- Factorial Program ---");
+        FactorialC f = new FactorialC();
+        f.input(sc);
+        f.output();
+
+        System.out.println("\n--- Fibonacci Series ---");
+        FibonacciC fi = new FibonacciC();
+        fi.input(sc);
+        fi.series();
+
+        System.out.println("\n--- Palindrome Check ---");
+        PalindromeC p1 = new PalindromeC();
+        p1.input(sc);
+        p1.ispalin();
+
+        System.out.println("\n--- Pyramid Pattern ---");
+        PyramidC p = new PyramidC();
+        p.input(sc);
+        p.display();
+
+        System.out.println("\n--- Swap Two Numbers ---");
+        SwapnoC s = new SwapnoC();
+        s.input(sc);
+        s.output();
+        s.swap();
+        System.out.println("After swapping:");
+        s.output();
+
+        sc.close();
+    }
+}
+
+class ArmnocheckC {
+    int num;
+
+    void input(Scanner sc) {
+        System.out.println("Enter a number:");
+        num = sc.nextInt();
+    }
+
+    void isarm() {
+        int digits = countd(num);
+
+        if (armsum(num, digits) == num)
+            System.out.println("Number is Armstrong");
+        else
+            System.out.println("Number is NOT Armstrong");
+    }
+
+    int countd(int num) {
+        if (num == 0)
+            return 0;
+        return 1 + countd(num / 10);
+    }
+
+    int armsum(int num, int digits) {
+        if (num == 0)
+            return 0;
+        return (int) Math.pow(num % 10, digits) + armsum(num / 10, digits);
+    }
+}
+
+class FactorialC {
+
+    int num;
+    int facto;
+
+    void input(Scanner sc) {
+        System.out.println("Enter number:");
+        num = sc.nextInt();
+        facto = fact(num);
+    }
+
+    int fact(int num) {
+        if (num == 0 || num == 1)
+            return 1;
+        return num * fact(num - 1);
+    }
+
+    void output() {
+        System.out.println("Factorial is: " + facto);
+    }
+}
+
+class FibonacciC {
+
+    int terms;
+
+    void input(Scanner sc) {
+        System.out.println("Enter number of terms:");
+        terms = sc.nextInt();
+    }
+
+    void series() {
+
+        int first = 0;
+        int second = 1;
+        int next;
+
+        for (int i = 0; i < terms; i++) {
+            System.out.print(first + " ");
+            next = first + second;
+            first = second;
+            second = next;
+        }
+
+        System.out.println();
+    }
+}
+
+class PalindromeC {
+
+    int num;
+
+    void input(Scanner sc) {
+        System.out.println("Enter number to check:");
+        num = sc.nextInt();
+    }
+
+    void ispalin() {
+        if (num == reverse(num, 0))
+            System.out.println("Number is Palindrome");
+        else
+            System.out.println("Number is NOT Palindrome");
+    }
+
+    int reverse(int n, int r) {
+        if (n == 0)
+            return r;
+
+        return reverse(n / 10, r * 10 + n % 10);
+    }
+}
+
+class PyramidC {
+
+    int length;
+
+    void input(Scanner sc) {
+        System.out.println("Enter length of pyramid:");
+        length = sc.nextInt();
+    }
+
+    void display() {
+
+        for (int i = 1; i <= length; i++) {
+
+            for (int j = i; j < length; j++) {
+                System.out.print(" ");
+            }
+
+            for (int k = 1; k <= i; k++) {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+    }
+}
+
+class SwapnoC {
+
+    int n1, n2;
+
+    void input(Scanner sc) {
+        System.out.println("Enter two numbers:");
+        n1 = sc.nextInt();
+        n2 = sc.nextInt();
+    }
+
+    void swap() {
+        n1 = n1 + n2;
+        n2 = n1 - n2;
+        n1 = n1 - n2;
+    }
+
+    void output() {
+        System.out.println("n1: " + n1);
+        System.out.println("n2: " + n2);
+    }
+}
 ```
+<img width="1185" height="923" alt="image" src="https://github.com/user-attachments/assets/0b5e6f4f-c359-4a28-88cf-b519a919225d" />
+
+
+
 
 
 
