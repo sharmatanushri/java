@@ -12,6 +12,8 @@
 
 [Program-7  Program to perform addition of times where each time is given in hr,min(test result in  by creation of object in main class](#assi-7)
 
+[Program-8  Colect codes of five programs in c language and convert to java using object and classes in single program](#assi-8)
+
 
 
 
@@ -495,6 +497,11 @@ class Time1{
 }
 ```
 <img width="899" height="502" alt="image" src="https://github.com/user-attachments/assets/e4ff7edd-f955-4b81-97a8-1265910b947f" />
+
+## assi-8
+```
+```
+
 
 
 
