@@ -10,6 +10,11 @@
 
 [Program-6  Program to perform addition of times where each time is given in hr,min,sec(test result in  by creation of object in main class](#assi-6)
 
+[Program-7  Program to perform addition of times where each time is given in hr,min(test result in  by creation of object in main class](#assi-7)
+
+
+
+
 
 
 ## assi-1
@@ -414,6 +419,83 @@ class Time{
 
 ```
 <img width="962" height="630" alt="image" src="https://github.com/user-attachments/assets/1e619e2d-0cfc-4c62-8a48-765829fd8479" />
+
+## assi-7
+```
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.mycompany.pilani;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author IBM17
+ */
+public class TimeAddHrMin {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+      
+         Time1 t1 = new Time1();
+        Time1 t2 = new Time1();
+        Time1 t3 = new Time1();
+
+        t1.input();
+        t2.input();
+
+        t3.add(t1, t2);
+        t3.generalise();
+        t3.output();
+    
+    }
+    
+}
+class Time1{
+    
+    
+    int hr;
+    int min;
+   
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter hours:");
+        hr = sc.nextInt();
+
+        System.out.println("Enter minutes:");
+        min = sc.nextInt();
+
+    
+    }
+
+    void add(Time1 t1, Time1 t2) {
+        hr = t1.hr + t2.hr;
+        min = t1.min + t2.min;
+            }
+
+    void generalise() {
+
+        
+
+        if (min >= 60) {
+            hr = hr + min / 60;
+            min = min % 60;
+        }
+    }
+
+    void output() {
+        System.out.println("Time = " + hr + " hr " + min + " min " );
+    }
+}
+```
+<img width="899" height="502" alt="image" src="https://github.com/user-attachments/assets/e4ff7edd-f955-4b81-97a8-1265910b947f" />
+
 
 
 
