@@ -8,6 +8,11 @@
 
 [Program-5  Program to perform addition of distances where each distance is given in m,cm(test result in  by creation of object in main class](#assi-5)
 
+[Program-6  Program to perform addition of times where each time is given in hr,min,sec(test result in  by creation of object in main class](#assi-6)
+
+
+
+
 
 
 
@@ -330,7 +335,92 @@ class Dist1{
     }
 
 ```
-<img width="828" height="559" alt="image" src="https://github.com/user-attachments/assets/813f9689-c9ea-4ea6-9bf9-0ad28925783c" />
+<img width="828" height="559" alt="image" src="https://github.com/user-attachments/assets/28ddc39a-2e57-4cab-88d4-347966bf717d" />
+
+## assi-6
+```
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.mycompany.pilani;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author IBM17
+ */
+public class AddTime {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         Time t1 = new Time();
+        Time t2 = new Time();
+        Time t3 = new Time();
+
+        t1.input();
+        t2.input();
+
+        t3.add(t1, t2);
+        t3.generalise();
+        t3.output();
+    }
+    
+}
+
+class Time{
+    
+    
+    int hr;
+    int min;
+    int sec;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter hours:");
+        hr = sc.nextInt();
+
+        System.out.println("Enter minutes:");
+        min = sc.nextInt();
+
+        System.out.println("Enter seconds:");
+        sec = sc.nextInt();
+    }
+
+    void add(Time t1, Time t2) {
+        hr = t1.hr + t2.hr;
+        min = t1.min + t2.min;
+        sec = t1.sec + t2.sec;
+    }
+
+    void generalise() {
+
+        if (sec >= 60) {
+            min = min + sec / 60;
+            sec = sec % 60;
+        }
+
+        if (min >= 60) {
+            hr = hr + min / 60;
+            min = min % 60;
+        }
+    }
+
+    void output() {
+        System.out.println("Time = " + hr + " hr " + min + " min " + sec + " sec");
+    }
+}
+
+```
+<img width="962" height="630" alt="image" src="https://github.com/user-attachments/assets/1e619e2d-0cfc-4c62-8a48-765829fd8479" />
+
+
+
+
 
 
 
