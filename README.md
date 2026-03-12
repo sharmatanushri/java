@@ -2,6 +2,9 @@
 
 [Program-2  Program to check armstrong number](#assi-2)
 
+[Program-3  Program to check armstrong number](#assi-3)
+
+
 ## assi-1
 ```
 # 
@@ -102,4 +105,64 @@ class Armnocheck
 
 ```
 <img width="795" height="482" alt="image" src="https://github.com/user-attachments/assets/b71caddd-08ec-4204-8ddf-8a32ab86ef6c" />
+
+## assi-3
+```
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.mycompany.pilani;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author IBM17
+ */
+public class ArithmaticOpNo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        calc obj=new calc();
+        obj.input();
+        obj.calculate();
+        obj.output();
+         
+    }
+    
+}
+
+class calc
+{   int a,b;
+    int sum,sub,mult;
+    void input()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("ENTER 1ST OPERAND:");
+
+        a=sc.nextInt();
+        System.out.println("ENTER 2nd OPERAND:");
+        b=sc.nextInt();
+        
+    }
+    void calculate()
+    {
+        sum=a+b;
+        sub=a-b;
+        mult=a*b;
+    }
+    
+    void output()
+    {
+        System.out.println("Addition = " + sum);
+        System.out.println("Subtraction = " + sub);
+        System.out.println("Multiplication = " + mult);
+    }
+}
+```
+<img width="800" height="390" alt="image" src="https://github.com/user-attachments/assets/d9d48141-9bd7-4a99-9162-6043c4aac678" />
+
 
