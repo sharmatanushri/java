@@ -2,7 +2,13 @@
 
 [Program-2  Program to check armstrong number](#assi-2)
 
-[Program-3  Program to check armstrong number](#assi-3)
+[Program-3  Program to perform arithmatic operation on numbers using classes and objects](#assi-3)
+
+[Program-4  Program to perform addition of distances where each distance is given in m,cm,mm(test result in  by creation of object in main class](#assi-4)
+
+[Program-5  Program to perform addition of distances where each distance is given in m,cm(test result in  by creation of object in main class](#assi-5)
+
+
 
 
 ## assi-1
@@ -138,6 +144,7 @@ public class ArithmaticOpNo {
 class calc
 {   int a,b;
     int sum,sub,mult;
+    double div;
     void input()
     {
         Scanner sc=new Scanner(System.in);
@@ -153,6 +160,7 @@ class calc
         sum=a+b;
         sub=a-b;
         mult=a*b;
+        div=(double)a/b;
     }
     
     void output()
@@ -160,9 +168,172 @@ class calc
         System.out.println("Addition = " + sum);
         System.out.println("Subtraction = " + sub);
         System.out.println("Multiplication = " + mult);
+        System.out.println("division = " + div);
     }
 }
 ```
-<img width="800" height="390" alt="image" src="https://github.com/user-attachments/assets/d9d48141-9bd7-4a99-9162-6043c4aac678" />
+<img width="746" height="350" alt="image" src="https://github.com/user-attachments/assets/2cc592d7-2105-4133-8303-5b686da8f28a" />
+
+## assi-4
+```
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.pilani;
+
+import java.util.Scanner;
+
+
+
+/**
+ *
+ * @author IBM17
+ */
+public class dis_main {
+
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+        Dist o1=new Dist();
+        Dist o2=new Dist();
+        Dist o3=new Dist();
+        o1.input();
+        o2.input();
+        o1.generalise();
+        o2.generalise();
+
+        o3.add(o1,o2);
+        o3.generalise();
+        o3.output();
+    }
+}
+
+class Dist{
+    int m;
+    int cm;
+    int mm;
+     void input(){
+         Scanner sc=new Scanner(System.in);
+         System.out.println(" Enter mtr");
+         m=sc.nextInt();
+         System.out.println(" Enter cm");
+         cm=sc.nextInt();
+         System.out.println(" Enter mm");
+         mm=sc.nextInt();
+         
+         
+     }
+     
+    void output(){
+         System.out.println(" mtr="+m);
+         System.out.println(" cm="+cm);
+          System.out.println(" mm="+mm);
+    }
+    
+    void add(Dist d1,Dist d2){
+        m=d1.m+d2.m;
+        cm=d1.cm+d2.cm;
+        mm=d1.mm+d2.mm;}
+    void generalise()
+    {
+        if(mm>=10)
+        {
+            cm=cm+mm/10;
+            mm=mm%10;
+     
+        }
+        if(cm>=100)
+        {
+            m=m+cm/100;
+            cm=cm%100;
+                  
+        }
+    }
+        
+       
+        
+    }
+```
+<img width="866" height="613" alt="image" src="https://github.com/user-attachments/assets/7257188b-a300-42a6-b559-0610ba294b0f" />
+## assi-5
+```
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.mycompany.pilani;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author IBM17
+ */
+public class DisAddMCm {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+        Dist1 o1=new Dist1();
+        Dist1 o2=new Dist1();
+        Dist1 o3=new Dist1();
+        o1.input();
+        o2.input();
+        o1.generalise();
+        o2.generalise();
+
+        o3.add(o1,o2);
+        o3.generalise();
+        o3.output();
+    }
+    
+}
+class Dist1{
+    int m;
+    int cm;
+    
+     void input(){
+         Scanner sc=new Scanner(System.in);
+         System.out.println(" Enter mtr");
+         m=sc.nextInt();
+         System.out.println(" Enter cm");
+         cm=sc.nextInt();
+       
+         
+         
+     }
+     void output(){
+         System.out.println(" mtr="+m);
+         System.out.println(" cm="+cm);
+          
+    }
+    
+    void add(Dist1 d1,Dist1 d2){
+        m=d1.m+d2.m;
+        cm=d1.cm+d2.cm;
+    }
+    void generalise()
+    {
+        
+        if(cm>=100)
+        {
+            m=m+cm/100;
+            cm=cm%100;
+                  
+        }
+    }
+        
+       
+        
+    }
+
+```
+<img width="828" height="559" alt="image" src="https://github.com/user-attachments/assets/813f9689-c9ea-4ea6-9bf9-0ad28925783c" />
+
+
+
+
 
 
