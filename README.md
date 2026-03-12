@@ -12,10 +12,6 @@
 
 
 
-
-
-
-
 ## assi-1
 ```
 # 
@@ -260,6 +256,7 @@ class Dist{
     }
 ```
 <img width="866" height="613" alt="image" src="https://github.com/user-attachments/assets/7257188b-a300-42a6-b559-0610ba294b0f" />
+
 ## assi-5
 ```
 /*
