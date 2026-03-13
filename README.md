@@ -12,7 +12,7 @@
 
 [Program-7  Write a class with four methods input,output,reverse,output reverse that is to perform operation on 1-D array](#assi-7)
 
-
+[Program-8  Write class to perform matrix operation- addition,multiplication, transpose, sum of rows,sum of columns,diagonal sum](#assi-8)
 
 
 
@@ -680,6 +680,11 @@ class Arrayre{
 }
 ```
 <img width="837" height="380" alt="image" src="https://github.com/user-attachments/assets/0a6b4101-cea9-4ffc-99a6-2ba7000ceb5e" />
+
+## assi-8
+```
+```
+
 
 
 
