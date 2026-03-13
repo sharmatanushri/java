@@ -10,6 +10,8 @@
 
 [Program-6  Colect codes of five programs in c language and convert to java using object and classes in single program](#assi-6)
 
+[Program-7  Write a class with four methods input,output,reverse,output reverse that is to perform operation on 1-D array](#assi-7)
+
 
 
 
@@ -606,6 +608,79 @@ class SwapnoC {
 }
 ```
 <img width="1185" height="923" alt="image" src="https://github.com/user-attachments/assets/0b5e6f4f-c359-4a28-88cf-b519a919225d" />
+
+## assi-7
+```
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.mycompany.pilani;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author IBM17
+ */
+public class ArrayOp {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    Arrayre o=new Arrayre();
+    o.input();
+    o.output();
+    o.reverse();
+    o.outputrev();
+    }
+    
+}
+
+class Arrayre{
+    
+    int arr[]=new int[5];
+    int revarr[]=new int[5];
+    void input()
+    {   Scanner sc=new Scanner(System.in);
+        System.out.print("Enter 5 elements in array: ");
+        for (int i=0;i<5;i++)
+        {   
+        
+            arr[i]=sc.nextInt();
+    }}
+    void output()
+    {
+        System.out.print("Original array is ");
+        for(int i=0;i<5;i++)
+        {
+            System.out.print(arr[i]+" ");
+           
+        }
+        System.out.println();
+    
+    } 
+    void reverse()
+    {   
+        for(int i=0;i<5;i++)
+        {revarr[i]=arr[5-i-1];
+        }
+            
+        
+    }
+    void outputrev(){
+        System.out.print("Reverse array is ");
+        for(int i=0;i<5;i++)
+        {
+            System.out.print(revarr[i]+" ");
+        }
+    }
+    
+}
+```
+<img width="837" height="380" alt="image" src="https://github.com/user-attachments/assets/0a6b4101-cea9-4ffc-99a6-2ba7000ceb5e" />
+
 
 
 
