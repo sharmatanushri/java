@@ -683,6 +683,127 @@ class Arrayre{
 
 ## assi-8
 ```
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pilani;
+import java.util.Scanner;
+
+/**
+ *
+ * @author IBM1
+ */
+public class MatrixMain {
+    public static void main(String args[]){
+        System.out.println("program strated");
+    Matrix m=new Matrix();
+    m.input();
+    m.output();
+    Matrixop o=new Matrixop();
+    o.add(m);
+    o.resoutput();
+    o.mult(m);
+    o.resoutput();
+    o.transpose(m);
+    
+}}
+class Matrix{
+ int [][]m1=new int[3][3];
+ int[][] m2=new int[3][3];
+ 
+ 
+
+ Scanner sc= new Scanner(System.in);
+ 
+ void input()
+ {
+  for(int i=0;i<3;i++)
+ {for(int j=0;j<3;j++)
+ { System.out.println("Enter element of 3*3 matrix m1:"+"m1["+i+"]["+j+"] : ");
+     m1[i][j]=sc.nextInt();
+      System.out.println("Enter elements of 3*3 matrix m2:"+"m2["+i+"]["+j+"] : ");
+     m2[i][j]=sc.nextInt();
+      }}
+     
+ }
+ void output()
+ {
+     System.out.println(" m1 is : ");
+     for(int i=0;i<3;i++)
+     {
+         for(int  j=0;j<3;j++){
+             System.out.print(m1[i][j]+" ");
+         }System.out.println();
+     }
+   System.out.println(" m2 is : ");
+     for(int i=0;i<3;i++)
+     {
+         for(int  j=0;j<3;j++){
+             System.out.print(m2[i][j]+" ");
+         }System.out.println();
+     }
+     
+ }
+ 
+}
+class Matrixop{
+     Scanner sc= new Scanner(System.in);
+    int[][]res=new int[3][3];
+    void add(Matrix m)
+    {   for(int i=0;i<3;i++)
+    {for(int j=0;j<3;j++)
+    {
+       res[i][j]=m.m1[i][j]+m.m2[i][j]; }
+       
+    }}
+    void resoutput(){
+    System.out.println(" result : ");
+     for(int i=0;i<3;i++)
+     {
+         for(int  j=0;j<3;j++){
+             System.out.print(res[i][j]+" ");
+         }System.out.println();
+     }}
+    void mult(Matrix m)
+    {
+        for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<3;j++)
+            {   res[i][j]=0;
+                for(int k=0;k<3;k++)
+                {
+                    res[i][j]+=m.m1[i][k]*m.m2[k][j];
+                }
+            }
+        }
+    }
+    void transpose(Matrix m)
+    {   System.out.println("transpose of matrix:m1 or m2");
+        
+        String mt;
+        mt=sc.next();
+        int [][] mtr;
+        if(mt.equals("m1"))
+        //mt=="m1" check if they pt to same string obj not suitable here
+        {
+            mtr=m.m1;
+        }
+        else
+            mtr=m.m2;
+    
+        
+        for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                System.out.print(mtr[j][i]+" ");
+            } System.out.println();
+        }
+    }
+    }
+
 ```
 
 
