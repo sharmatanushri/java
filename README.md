@@ -707,6 +707,10 @@ public class MatrixMain {
     o.mult(m);
     o.resoutput();
     o.transpose(m);
+    o.sumOfClms(m);
+    o.sumOfRows(m);
+    o.sumOfDiagonal(m);
+    
     
 }}
 class Matrix{
@@ -802,9 +806,84 @@ class Matrixop{
             } System.out.println();
         }
     }
+    void sumOfRows(Matrix m)
+    {
+        
+        System.out.println(" enter matrix to find sum of row m1 or m1");
+        String ms;
+        ms=sc.next();
+        int [][] msr;
+        if(ms.equals("m1"))
+        {
+                msr=m.m1;            
+    
+         }
+        else
+            msr=m.m2;
+        for(int i=0;i<3;i++)
+        {   int sum=0;
+            for(int j=0;j<3;j++)
+            {
+               sum+=msr[i][j];
+            }   System.out.println("Sum of row"+(i+1)+"="+sum);
+        }
+    } 
+    
+    void sumOfClms(Matrix m)
+    {
+        
+        System.out.println(" enter matrix to find sum of clmns of m1 or m1");
+        String ms;
+        ms=sc.next();
+        int [][] msc;
+        if(ms.equals("m1"))
+        {
+                msc=m.m1;            
+    
+         }
+        else
+            msc=m.m2;
+        for(int i=0;i<3;i++)
+        {   int sum=0;
+            for(int j=0;j<3;j++)
+            {
+               sum+=msc[j][i];
+            }   System.out.println("Sum of columns"+(i+1)+"="+sum);
+        }
+    } 
+    void sumOfDiagonal(Matrix m)
+    { System.out.println(" enter matrix to find sum of diagonal of m1 or m1");
+        String ms;
+        ms=sc.next();
+        int [][] msd;
+        if(ms.equals("m1"))
+        {
+                msd=m.m1;            
+    
+         }
+        else
+            msd=m.m2;
+        
+        int df=0;
+        int ds=0;
+        for(int i=0;i<3;i++)
+        {   
+            for(int j=0;j<3;j++)
+            {  if(i==j)
+               df+=msd[i][j];
+
+            }          ds+=msd[i][3-i-1]; 
+        }
+        System.out.println("first diagonal"+"="+df);
+        System.out.println("second diagonal"+"="+ds);
+        
+        
+    }  
     }
 
 ```
+<img width="497" height="894" alt="image" src="https://github.com/user-attachments/assets/c7a28466-75f2-4355-87f0-6f552028b272" />
+
 
 
 
