@@ -14,6 +14,8 @@
 
 [Program-8  Write class to perform matrix operation- addition,multiplication, transpose, sum of rows,sum of columns,diagonal sum](#assi-8)
 
+[Program-9  Write program using 3 classes to print 1 too 100 in all 3  with and without  thread(analyse the output) repeat same using Runnable interface](#assi-9)
+
 
 
 
@@ -883,6 +885,139 @@ class Matrixop{
 
 ```
 <img width="497" height="894" alt="image" src="https://github.com/user-attachments/assets/c7a28466-75f2-4355-87f0-6f552028b272" />
+
+## assi-9
+```
+public class Mainred {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Thread1 t1=new Thread1();
+         Thread2 t2=new Thread2();
+          Thread3 t3=new Thread3();
+          t1.fun();
+          t2.fun();
+          t3.fun();
+    }
+    
+}
+ class Thread1 {
+    void fun(){
+    for(int i=0;i<100;i++)
+    {
+    System.out.println("THREAD 1:"+i);
+            }}
+}
+class Thread2 {
+    void fun(){
+    for(int i=0;i<100;i++)
+    {
+    System.out.println("THREAD 2:"+i);
+            }}
+    
+}
+class Thread3 {
+    void fun(){
+    for(int i=0;i<100;i++)
+    {
+    System.out.println("THREAD 3:"+i);
+            }}
+    
+}
+
+public class CombinedT 
+    {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        TThread1 t1=new TThread1();
+         TThread2 t2=new TThread2();
+          TThread3 t3=new TThread3();
+          t1.start();
+          t2.start();
+          t3.start();
+    }
+    
+}
+   class TThread1 extends Thread {
+    public void run(){
+    for(int i=0;i<100;i++)
+    {
+    System.out.println("THREAD 1:"+i);
+            }}
+}
+class TThread2 extends Thread  {
+    public void run(){
+    for(int i=0;i<100;i++)
+    {
+    System.out.println("THREAD 2:"+i);
+            }}
+    
+}
+class TThread3 extends Thread  {
+    public void run(){
+    for(int i=0;i<100;i++)
+    {
+    System.out.println("THREAD 3:"+i);
+            }}
+    
+}
+public class Threadinter{ 
+        public static void main(String[] args) {
+        // TODO code application logic here
+        TIThread1 t1=new TIThread1();
+        TIThread2 t2=new TIThread2();
+        TIThread3 t3=new TIThread3();
+        Thread th1=new Thread(t1);
+        Thread th2=new Thread(t2);
+        Thread th3=new Thread(t3);
+        
+          th1.start();
+          th2.start();
+          th3.start();
+    }}
+    
+
+   class TIThread1 implements Runnable {
+    @Override
+    public void run(){
+    for(int i=0;i<100;i++)
+    {
+    System.out.println("THREAD 1:"+i);
+            }}
+}
+class TIThread2 implements Runnable  {
+    @Override
+    public void run(){
+    for(int i=0;i<100;i++)
+    {
+    System.out.println("THREAD 2:"+i);
+            }}
+    
+}
+class TIThread3 implements Runnable  {
+    @Override
+    public void run(){
+    for(int i=0;i<100;i++)
+    {
+    System.out.println("THREAD 3:"+i);
+            }}
+    
+}
+```
+<img width="1011" height="900" alt="image" src="https://github.com/user-attachments/assets/8a4245e6-939a-4561-9482-4ad8c5d73d2e" />
+<img width="662" height="904" alt="image" src="https://github.com/user-attachments/assets/1725296b-dc59-4271-ba97-506377bc13ac" />
+<img width="283" height="815" alt="image" src="https://github.com/user-attachments/assets/fbd271a7-acc4-41fb-be11-324f141ffdb1" />
+
+
+
+
 
 
 
