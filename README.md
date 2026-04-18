@@ -16,6 +16,8 @@
 
 [Program-9  Write program using 3 classes to print 1 too 100 in all 3  with and without  thread(analyse the output) repeat same using Runnable interface](#assi-9)
 
+[Program-10 Using concept multithreading  the output of all three threads must be synchronised(using join method)](#assi-10)
+
 
 
 
@@ -1014,6 +1016,9 @@ class TIThread3 implements Runnable  {
 <img width="1011" height="900" alt="image" src="https://github.com/user-attachments/assets/8a4245e6-939a-4561-9482-4ad8c5d73d2e" />
 <img width="662" height="904" alt="image" src="https://github.com/user-attachments/assets/1725296b-dc59-4271-ba97-506377bc13ac" />
 <img width="283" height="815" alt="image" src="https://github.com/user-attachments/assets/fbd271a7-acc4-41fb-be11-324f141ffdb1" />
+
+## assi-10
+```
 
 
 
