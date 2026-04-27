@@ -18,7 +18,7 @@
 
 [Program-10 Using concept multithreading  the output of all three threads is unpredictable and all the threads  must be synchronised(using join method)](#assi-10)
 
-[Program 11-program for addition of 2 mumbers using swing](#assi-11)
+[Program 11-program for addition of 2 Numbers using swing](#assi-11)
 
 [Program 12-program for making calculator using swing](#assi-12)
 
@@ -1037,6 +1037,80 @@ class TIThread3 implements Runnable  {
 
 ## assi-10
 ```
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package pilani;
+
+/**
+ *
+ * @author IBM1
+ */
+public class Threadinter{ 
+        public static void main(String[] args) {
+        // TODO code application logic here
+        Cthread t1=new Cthread("t1");
+        Cthread t2=new Cthread("t2");
+        Cthread t3=new Cthread("t3");
+        Thread th1=new Thread(t1);
+        Thread th2=new Thread(t2);
+        Thread th3=new Thread(t3);
+        try {
+            // Start T1 and immediately wait for it to complete
+            th1.start();
+            th1.join(); 
+
+            // T2 will only start after T1 has died
+            th2.start();
+            th2.join();
+
+            // T3 will only start after T2 has died
+            th3.start();
+            th3.join();
+
+        } catch (InterruptedException e) {
+            System.out.println("Main thread was interrupted.");
+        }
+        
+        System.out.println("Main execution finished.");
+    }
+}
+    
+    
+
+   class Cthread implements Runnable {
+        private String name;
+        Cthread(String name)
+        {this.name=name;}
+    @Override
+    public void run(){
+        
+    for(int i=0;i<10;i++)
+    {
+        System.out.println(name+"processing"+i);
+        try{ 
+            Thread.sleep(50);
+
+    }
+    catch (InterruptedException e){
+            
+            e.printStackTrace();
+            }}
+    System.out.println("successfull completed"+name);
+    
+            }
+   
+   }
+
+```
+<img width="363" height="733" alt="image" src="https://github.com/user-attachments/assets/43978f76-3d5a-438d-8214-e6c6aa832805" />
+## assi-11
+```
+
+
+
+
 
 
 
