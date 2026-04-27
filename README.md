@@ -16,7 +16,25 @@
 
 [Program-9  Write program using 3 classes to print 1 too 100 in all 3  with and without  thread(analyse the output) repeat same using Runnable interface](#assi-9)
 
-[Program-10 Using concept multithreading  the output of all three threads must be synchronised(using join method)](#assi-10)
+[Program-10 Using concept multithreading  the output of all three threads is unpredictable and all the threads  must be synchronised(using join method)](#assi-10)
+
+[Program 11-program for addition of 2 mumbers using swing](#assi-11)
+
+[Program 12-program for making calculator using swing](#assi-12)
+
+[Program 13-program for matrix addition using swing](#assi-13)
+
+[Program 14-create student registration for 10 elements sav ethat to applet, servalet, databasetable using JDBC connectivity](#assi-14)
+
+[Program 15- Create one JFrame apply 10 buttons on that after clicking on each button a new structure is created(circle, oval, rectangle etc)](#assi-15)
+
+[Program 16- Just using mouse event create a frame like paint brush with selection of colour and width](#assi-16)
+
+
+
+
+
+
 
 
 
