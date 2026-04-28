@@ -1107,6 +1107,231 @@ public class Threadinter{
 <img width="363" height="733" alt="image" src="https://github.com/user-attachments/assets/43978f76-3d5a-438d-8214-e6c6aa832805" />
 ## assi-11
 ```
+import javax.swing.*;
+
+public class Add {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Addition");
+
+        JLabel l1 = new JLabel("Enter Number 1:");
+        JLabel l2 = new JLabel("Enter Number 2:");
+        JLabel l3 = new JLabel("Result:");
+
+        JTextField t1 = new JTextField();
+        JTextField t2 = new JTextField();
+        JTextField t3 = new JTextField();
+
+        JButton b = new JButton("Add");
+
+        l1.setBounds(30, 30, 120, 30);
+        t1.setBounds(160, 30, 100, 30);
+
+        l2.setBounds(30, 70, 120, 30);
+        t2.setBounds(160, 70, 100, 30);
+
+        b.setBounds(90, 110, 80, 30);
+
+        l3.setBounds(30, 150, 120, 30);
+        t3.setBounds(160, 150, 100, 30);
+
+        f.add(l1); 
+        f.add(t1);
+        f.add(l2); 
+        f.add(t2);
+        f.add(b);
+        f.add(l3); 
+        f.add(t3);
+
+        // Button action
+        b.addActionListener(e -> {
+            int a = Integer.parseInt(t1.getText());
+            int b1 = Integer.parseInt(t2.getText());
+            t3.setText(String.valueOf(a + b1));
+        });
+
+        f.setSize(320, 250);
+        f.setLayout(null);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
+```
+<img width="379" height="303" alt="image" src="https://github.com/user-attachments/assets/cf347de9-ec15-4109-8607-9019723d0fe6" />
+
+
+## assi-12
+```
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Calculator {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Calculator");
+
+        JLabel l1 = new JLabel("Enter Number 1:");
+        JLabel l2 = new JLabel("Enter Number 2:");
+        JLabel l3 = new JLabel("Result:");
+
+        JTextField t1 = new JTextField();
+        JTextField t2 = new JTextField();
+        JTextField t3 = new JTextField();
+
+        JButton add = new JButton("+");
+        JButton sub = new JButton("-");
+        JButton mul = new JButton("*");
+        JButton div = new JButton("/");
+
+        l1.setBounds(30, 30, 120, 30);
+        t1.setBounds(160, 30, 100, 30);
+
+        l2.setBounds(30, 70, 120, 30);
+        t2.setBounds(160, 70, 100, 30);
+
+        l3.setBounds(30, 110, 120, 30);
+        t3.setBounds(160, 110, 100, 30);
+
+        add.setBounds(30, 160, 50, 30);
+        sub.setBounds(90, 160, 50, 30);
+        mul.setBounds(150, 160, 50, 30);
+        div.setBounds(210, 160, 50, 30);
+
+        f.add(l1); f.add(t1);
+        f.add(l2); f.add(t2);
+        f.add(l3); f.add(t3);
+
+        f.add(add); f.add(sub); f.add(mul); f.add(div);
+
+        add.addActionListener(e -> {
+            int a = Integer.parseInt(t1.getText());
+            int b = Integer.parseInt(t2.getText());
+            t3.setText(String.valueOf(a + b));
+        });
+
+        sub.addActionListener(e -> {
+            int a = Integer.parseInt(t1.getText());
+            int b = Integer.parseInt(t2.getText());
+            t3.setText(String.valueOf(a - b));
+        });
+
+        mul.addActionListener(e -> {
+            int a = Integer.parseInt(t1.getText());
+            int b = Integer.parseInt(t2.getText());
+            t3.setText(String.valueOf(a * b));
+        });
+
+        div.addActionListener(e -> {
+            int a = Integer.parseInt(t1.getText());
+            int b = Integer.parseInt(t2.getText());
+            t3.setText(String.valueOf(a / b));
+        });
+
+        f.setSize(320, 250);
+        f.setLayout(null);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
+```
+<img width="379" height="304" alt="image" src="https://github.com/user-attachments/assets/b3bf50e8-939b-48b2-901a-a48b365acde5" />
+
+## assi-13
+```
+import javax.swing.*;
+import java.awt.event.*;
+
+public class MatrixAdd {
+    public static void main(String[] args) {
+
+        JFrame f = new JFrame("Dynamic Matrix Addition");
+
+        JLabel sizeLabel = new JLabel("Enter Size:");
+        JTextField sizeField = new JTextField();
+        JButton create = new JButton("Create Matrix");
+
+        sizeLabel.setBounds(50, 20, 100, 30);
+        sizeField.setBounds(150, 20, 50, 30);
+        create.setBounds(220, 20, 130, 30);
+
+        f.add(sizeLabel);
+        f.add(sizeField);
+        f.add(create);
+
+        create.addActionListener(e -> {
+            int n = Integer.parseInt(sizeField.getText());
+
+            JTextField[][] A = new JTextField[n][n];
+            JTextField[][] B = new JTextField[n][n];
+            JTextField[][] C = new JTextField[n][n];
+
+            JLabel l1 = new JLabel("Matrix A");
+            JLabel l2 = new JLabel("Matrix B");
+            JLabel l3 = new JLabel("Result");
+
+            l1.setBounds(50, 70, 100, 20);
+            l2.setBounds(250, 70, 100, 20);
+            l3.setBounds(450, 70, 100, 20);
+
+            f.add(l1); f.add(l2); f.add(l3);
+
+            int x = 50, y = 100;
+
+            for(int i=0;i<n;i++){
+                for(int j=0;j<n;j++){
+                    A[i][j] = new JTextField();
+                    A[i][j].setBounds(x + j*50, y + i*40, 40, 30);
+                    f.add(A[i][j]);
+                }
+            }
+
+            x = 250;
+            for(int i=0;i<n;i++){
+                for(int j=0;j<n;j++){
+                    B[i][j] = new JTextField();
+                    B[i][j].setBounds(x + j*50, y + i*40, 40, 30);
+                    f.add(B[i][j]);
+                }
+            }
+            
+            x = 450;
+            for(int i=0;i<n;i++){
+                for(int j=0;j<n;j++){
+                    C[i][j] = new JTextField();
+                    C[i][j].setBounds(x + j*50, y + i*40, 40, 30);
+                    C[i][j].setEditable(false);
+                    f.add(C[i][j]);
+                }
+            }
+
+            JButton add = new JButton("Add");
+            add.setBounds(250, y + n*50, 80, 30);
+            f.add(add);
+
+            add.addActionListener(ev -> {
+                for(int i=0;i<n;i++){
+                    for(int j=0;j<n;j++){
+                        int a = Integer.parseInt(A[i][j].getText());
+                        int b = Integer.parseInt(B[i][j].getText());
+                        C[i][j].setText(String.valueOf(a + b));
+                    }
+                }
+            });
+
+            f.repaint();
+        });
+
+        f.setSize(700, 500);
+        f.setLayout(null);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
+```
+<img width="857" height="616" alt="image" src="https://github.com/user-attachments/assets/296fc531-8481-4ad3-97b7-128a31a6d9f4" />
+
+
+
+
+
 
 
 
