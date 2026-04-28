@@ -30,6 +30,20 @@
 
 [Program 16- Just using mouse event create a frame like paint brush with selection of colour and width](#assi-16)
 
+[Program-17 Create a package of any 5 classes of your choice and import it.](#Assi-17)
+
+[Program-18 Create one package and sub package  import and test it.](#Assi-18)
+
+[Program-19 Create one small array of size 5 apply array out of bounds exception using try catch give a proper message in catch and demonstrate the exception exactly in the same fashion demonstrate arithmetic exception.](#Assi-19)
+
+[Program-20 To test the range of age of one student.write a program using user defined exception.](#Assi-20)
+
+[Program-21 File Handling Programs (given in the PPT).](#Assi-21)
+
+[Program-22 Program to make an ArrayList and using various methods of LinkedList.](#Assi-22)
+
+[Program-23 Inheritance Programs, using interface and abstract classes.](#Assi-23)
+
 
 
 
@@ -1327,6 +1341,352 @@ public class MatrixAdd {
 }
 ```
 <img width="857" height="616" alt="image" src="https://github.com/user-attachments/assets/296fc531-8481-4ad3-97b7-128a31a6d9f4" />
+## assi-14
+```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.*;
+
+public class RegistrationApp extends JFrame implements ActionListener {
+
+    // ── 10 Input Fields ──────────────────────────────
+    JTextField  tfFirstName, tfLastName, tfRoll;
+    JTextField  tfEmail, tfPhone, tfDOB;
+    JTextField  tfCourse, tfAddress, tfCity;
+    JComboBox<String> cbGender;
+
+    JButton btnSubmit, btnClear;
+    JLabel  lblStatus;
+
+    // ── Constructor: Build the UI ─────────────────────
+    public RegistrationApp() {
+        setTitle("Student Registration Form");
+        setSize(500, 550);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout(5, 5));
+
+        // --- Title ---
+        JLabel title = new JLabel("Student Registration System", SwingConstants.CENTER);
+        title.setFont(new Font("Arial", Font.BOLD, 18));
+        title.setOpaque(true);
+        title.setBackground(new Color(0, 102, 204));
+        title.setForeground(Color.WHITE);
+        title.setBorder(BorderFactory.createEmptyBorder(12, 0, 12, 0));
+        add(title, BorderLayout.NORTH);
+
+        // --- Form Grid (10 rows x 2 columns) ---
+        JPanel form = new JPanel(new GridLayout(10, 2, 10, 10));
+        form.setBorder(BorderFactory.createEmptyBorder(15, 30, 10, 30));
+
+        // Field 1 - First Name
+        form.add(new JLabel("1. First Name:"));
+        tfFirstName = new JTextField();
+        form.add(tfFirstName);
+
+        // Field 2 - Last Name
+        form.add(new JLabel("2. Last Name:"));
+        tfLastName = new JTextField();
+        form.add(tfLastName);
+
+        // Field 3 - Roll Number
+        form.add(new JLabel("3. Roll Number:"));
+        tfRoll = new JTextField();
+        form.add(tfRoll);
+
+        // Field 4 - Email
+        form.add(new JLabel("4. Email:"));
+        tfEmail = new JTextField();
+        form.add(tfEmail);
+
+        // Field 5 - Phone
+        form.add(new JLabel("5. Phone:"));
+        tfPhone = new JTextField();
+        form.add(tfPhone);
+
+        // Field 6 - Date of Birth
+        form.add(new JLabel("6. Date of Birth:"));
+        tfDOB = new JTextField("DD/MM/YYYY");
+        form.add(tfDOB);
+
+        // Field 7 - Gender (Dropdown)
+        form.add(new JLabel("7. Gender:"));
+        cbGender = new JComboBox<>(new String[]{"Male", "Female", "Other"});
+        form.add(cbGender);
+
+        // Field 8 - Course
+        form.add(new JLabel("8. Course:"));
+        tfCourse = new JTextField();
+        form.add(tfCourse);
+
+        // Field 9 - Address
+        form.add(new JLabel("9. Address:"));
+        tfAddress = new JTextField();
+        form.add(tfAddress);
+
+        // Field 10 - City
+        form.add(new JLabel("10. City:"));
+        tfCity = new JTextField();
+        form.add(tfCity);
+
+        add(form, BorderLayout.CENTER);
+
+        // --- Bottom: Buttons + Status ---
+        JPanel bottom = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 8));
+
+        btnSubmit = new JButton("Submit");
+        btnSubmit.setBackground(new Color(0, 153, 76));
+        btnSubmit.setForeground(Color.WHITE);
+        btnSubmit.setFont(new Font("Arial", Font.BOLD, 13));
+
+        btnClear = new JButton("Clear");
+        btnClear.setBackground(new Color(204, 0, 0));
+        btnClear.setForeground(Color.WHITE);
+        btnClear.setFont(new Font("Arial", Font.BOLD, 13));
+
+        lblStatus = new JLabel("Fill all fields and click Submit");
+        lblStatus.setFont(new Font("Arial", Font.ITALIC, 12));
+        lblStatus.setForeground(Color.DARK_GRAY);
+
+        btnSubmit.addActionListener(this);
+        btnClear.addActionListener(this);
+
+        bottom.add(btnSubmit);
+        bottom.add(btnClear);
+        bottom.add(lblStatus);
+        add(bottom, BorderLayout.SOUTH);
+
+        setLocationRelativeTo(null); // Center on screen
+        setVisible(true);
+    }
+
+    // ── Button Click Handler ──────────────────────────
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnSubmit) {
+            saveToDatabase();
+        } else if (e.getSource() == btnClear) {
+            clearFields();
+        }
+    }
+
+    // ── Save Data to Oracle DB using JDBC ─────────────
+    private void saveToDatabase() {
+
+        // Basic validation
+        if (tfFirstName.getText().trim().isEmpty() ||
+            tfRoll.getText().trim().isEmpty()) {
+            lblStatus.setForeground(Color.RED);
+            lblStatus.setText("First Name and Roll Number are required!");
+            return;
+        }
+
+        String sql = "INSERT INTO student_registration " +
+                     "(first_name, last_name, roll_number, email, phone, " +
+                     " date_of_birth, gender, course, address, city) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, tfFirstName.getText().trim());
+            ps.setString(2, tfLastName.getText().trim());
+            ps.setString(3, tfRoll.getText().trim());
+            ps.setString(4, tfEmail.getText().trim());
+            ps.setString(5, tfPhone.getText().trim());
+            ps.setString(6, tfDOB.getText().trim());
+            ps.setString(7, (String) cbGender.getSelectedItem());
+            ps.setString(8, tfCourse.getText().trim());
+            ps.setString(9, tfAddress.getText().trim());
+            ps.setString(10, tfCity.getText().trim());
+
+            int rows = ps.executeUpdate();
+
+            if (rows > 0) {
+                lblStatus.setForeground(new Color(0, 153, 0));
+                lblStatus.setText("Student registered successfully!");
+                clearFields();
+            }
+
+        } catch (SQLException ex) {
+            lblStatus.setForeground(Color.RED);
+            lblStatus.setText("DB Error: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
+    // ── Clear All 10 Fields ───────────────────────────
+    private void clearFields() {
+        tfFirstName.setText("");
+        tfLastName.setText("");
+        tfRoll.setText("");
+        tfEmail.setText("");
+        tfPhone.setText("");
+        tfDOB.setText("DD/MM/YYYY");
+        cbGender.setSelectedIndex(0);
+        tfCourse.setText("");
+        tfAddress.setText("");
+        tfCity.setText("");
+        lblStatus.setForeground(Color.DARK_GRAY);
+        lblStatus.setText("Fill all fields and click Submit");
+    }
+
+    // ── Main Method ───────────────────────────────────
+    public static void main(String[] args) {
+        new RegistrationApp();
+    }
+}
+```
+<img width="605" height="693" alt="image" src="https://github.com/user-attachments/assets/43c73e40-9e22-44e0-801b-660b708da281" />
+## assi-15
+```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame implements ActionListener {
+
+    String shape = "";
+
+    JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b10;
+
+    MyFrame() {
+        setTitle("Shapes");
+        setSize(500, 500);
+        setLayout(new FlowLayout());
+
+        b1 = new JButton("Circle");
+        b2 = new JButton("Oval");
+        b3 = new JButton("Rectangle");
+        b4 = new JButton("Square");
+        b5 = new JButton("Line");
+        b6 = new JButton("Arc");
+        b7 = new JButton("RoundRect");
+        b8 = new JButton("3D Rect");
+        b9 = new JButton("Fill Circle");
+        b10 = new JButton("Fill Rect");
+
+        add(b1); add(b2); add(b3); add(b4); add(b5);
+        add(b6); add(b7); add(b8); add(b9); add(b10);
+
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+        b5.addActionListener(this);
+        b6.addActionListener(this);
+        b7.addActionListener(this);
+        b8.addActionListener(this);
+        b9.addActionListener(this);
+        b10.addActionListener(this);
+
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        shape = e.getActionCommand();
+        repaint();
+    }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+
+        if (shape.equals("Circle"))
+            g.drawOval(200, 150, 100, 100);
+
+        else if (shape.equals("Oval"))
+            g.drawOval(180, 150, 140, 80);
+
+        else if (shape.equals("Rectangle"))
+            g.drawRect(200, 150, 120, 80);
+
+        else if (shape.equals("Square"))
+            g.drawRect(200, 150, 100, 100);
+
+        else if (shape.equals("Line"))
+            g.drawLine(200, 150, 300, 250);
+
+        else if (shape.equals("Arc"))
+            g.drawArc(200, 150, 100, 100, 0, 180);
+
+        else if (shape.equals("RoundRect"))
+            g.drawRoundRect(200, 150, 120, 80, 20, 20);
+
+        else if (shape.equals("3D Rect"))
+            g.draw3DRect(200, 150, 120, 80, true);
+
+        else if (shape.equals("Fill Circle"))
+            g.fillOval(200, 150, 100, 100);
+
+        else if (shape.equals("Fill Rect"))
+            g.fillRect(200, 150, 120, 80);
+    }
+}
+
+public class ShapesDemo {
+    public static void main(String[] args) {
+        new MyFrame();
+    }
+}
+```
+<img width="600" height="611" alt="image" src="https://github.com/user-attachments/assets/1465fee8-90ad-4c4a-b875-6381dfd3bfda" />
+## assi-16
+```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class PaintBrush extends JFrame {
+
+    int x, y;
+    Color color = Color.BLACK;
+    int size = 5;
+
+    public PaintBrush() {
+        setTitle("Paint Brush");
+        setSize(600, 500);
+        setLayout(new FlowLayout());
+
+        JButton red = new JButton("Red");
+        JButton green = new JButton("Green");
+        JButton blue = new JButton("Blue");
+
+        String sizes[] = {"5", "10", "15", "20"};
+        JComboBox<String> cb = new JComboBox<>(sizes);
+
+        add(red); add(green); add(blue); add(new JLabel("Size")); add(cb);
+
+        red.addActionListener(e -> color = Color.RED);
+        green.addActionListener(e -> color = Color.GREEN);
+        blue.addActionListener(e -> color = Color.BLUE);
+
+        cb.addActionListener(e -> {
+            size = Integer.parseInt((String)cb.getSelectedItem());
+        });
+
+        addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseDragged(MouseEvent e) {
+                Graphics g = getGraphics();
+                g.setColor(color);
+                g.fillOval(e.getX(), e.getY(), size, size);
+            }
+        });
+
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        new PaintBrush();
+    }
+}
+```
+<img width="733" height="613" alt="image" src="https://github.com/user-attachments/assets/c9c911f5-8a41-441b-8ddf-6a4384f92cfe" />
+
+
+
+
 
 
 
