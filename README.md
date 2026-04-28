@@ -1674,6 +1674,444 @@ public class PaintBrush extends JFrame {
 ```
 <img width="733" height="613" alt="image" src="https://github.com/user-attachments/assets/c9c911f5-8a41-441b-8ddf-6a4384f92cfe" />
 
+## assi-17
+```
+package mypack;
+
+public class A {
+    public void showA() {
+        System.out.println("Class A method");
+    }
+}
+```
+```
+package mypack;
+
+public class B {
+    public void showB() {
+        System.out.println("Class B method");
+    }
+}
+```
+```
+package mypack;
+
+public class C {
+    public void showC() {
+        System.out.println("Class C method");
+    }
+}
+```
+```
+package mypack;
+
+public class D {
+    public void showD() {
+        System.out.println("Class D method");
+    }
+}
+```
+```
+package mypack;
+
+public class E {
+    public void showE() {
+        System.out.println("Class E method");
+    }
+}
+```
+```
+import mypack.*;
+
+public class TestPackage {
+    public static void main(String[] args) {
+
+        A a = new A();
+        B b = new B();
+        C c = new C();
+        D d = new D();
+        E e = new E();
+
+        a.showA();
+        b.showB();
+        c.showC();
+        d.showD();
+        e.showE();
+    }
+}
+```
+<img width="367" height="245" alt="image" src="https://github.com/user-attachments/assets/450120f8-c0c4-4da1-8c74-40137b2210a9" />
+
+
+## assi-18
+```
+package mypack;
+
+public class A {
+    public void showA() {
+        System.out.println("Class A in mypack");
+    }
+}
+```
+```
+package mypack.subpack;
+
+public class B {
+    public void showB() {
+        System.out.println("Class B in subpackage");
+    }
+}
+```
+```
+import mypack.A;
+import mypack.subpack.B;
+
+public class Test {
+    public static void main(String[] args) {
+
+        A a = new A();
+        B b = new B();
+
+        a.showA();
+        b.showB();
+    }
+}
+```
+<img width="370" height="186" alt="image" src="https://github.com/user-attachments/assets/66e9a62c-98c4-4ba2-a547-816fd68457fc" />
+
+
+
+## assi-19
+```
+public class ExceptionDemo {
+    public static void main(String[] args) {
+
+        try {
+            int arr[] = new int[5];
+
+            arr[0] = 10;
+            arr[1] = 20;
+            arr[2] = 30;
+            arr[3] = 40;
+            arr[4] = 50;
+            arr[5] = 60;
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Array index is out of bounds!");
+        }
+
+        try {
+            int a = 10;
+            int b = 0;
+
+            int result = a / b; 
+
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero!");
+        }
+
+        System.out.println("Program continues after handling exceptions...");
+    }
+}
+```
+<img width="443" height="215" alt="image" src="https://github.com/user-attachments/assets/c7cce9b1-ab36-4666-8297-db665552f8b6" />
+
+
+## assi-20
+```
+class InvalidAgeException extends Exception {
+    InvalidAgeException(String msg) {
+        super(msg);
+    }
+}
+
+public class AgeTest {
+
+    static void checkAge(int age) throws InvalidAgeException {
+        if (age < 18 || age > 25) {
+            throw new InvalidAgeException("Age must be between 18 and 25!");
+        } else {
+            System.out.println("Valid age. Student allowed.");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        int age = 16; // change value to test
+
+        try {
+            checkAge(age);
+        } catch (InvalidAgeException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+}
+```
+<img width="399" height="166" alt="image" src="https://github.com/user-attachments/assets/61eb4d90-d47d-4499-b55d-ba8dfbc7f7c6" />
+
+
+## assi-21
+```
+import java.io.*;
+
+public class CharFileCopy {
+    public static void main(String[] args) {
+        try {
+            FileReader fr = new FileReader("source.txt");
+            FileWriter fw = new FileWriter("dest_char.txt");
+
+            int ch;
+
+            while ((ch = fr.read()) != -1) {
+                fw.write(ch);
+            }
+
+            fr.close();
+            fw.close();
+
+            System.out.println("File copied using character stream");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+```
+import java.io.*;
+
+public class ByteFileCopy {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream("source.txt");
+            FileOutputStream fos = new FileOutputStream("dest_byte.txt");
+
+            int b;
+
+            while ((b = fis.read()) != -1) {
+                fos.write(b);
+            }
+
+            fis.close();
+            fos.close();
+
+            System.out.println("File copied using byte stream");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+
+## assi-22
+```
+import java.util.*;
+public class ArrayListDemo {
+    public static void main(String[] args){
+        ArrayList<String>list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Mango");
+        
+        list.add(1,"Orange");
+        
+        System.out.println("Element at index 2: "+ list.get(2));
+        
+        list.set(0,"Grapes");
+        list.remove("Banana");
+        
+        System.out.println("Size: "+ list.size());
+        
+        System.out.println("Contains Mangoes?"+ list.contains("Mango"));
+        
+        System.out.println("List Elements:");
+        for(String item: list){
+            System.out.println(item);
+        }        
+        
+        list.clear();
+        System.out.println("Is empty?"+ list.isEmpty());
+    }
+}
+```
+<img width="366" height="313" alt="image" src="https://github.com/user-attachments/assets/e0d519f5-9da3-4214-bfb6-8058e519fcc9" />
+
+```
+import java.util.*;
+public class LinkedListExample {
+    public static void main(String[] args){
+        LinkedList<String> list = new LinkedList<>();
+        
+        list.add("Apple");
+        list.addFirst("Banana");
+        list.addLast("Mango");
+        
+        System.out.println("First: "+ list.getFirst());
+        System.out.println("Last: "+ list.getLast());
+        
+        list.set(1,"orange");
+        list.removeFirst();
+        list.removeLast();
+        
+        System.out.println("Size: "+ list.size());
+        
+        System.out.println("List Elements:");
+        for(String item: list){
+            System.out.println(item);
+        } 
+        
+        System.out.println("Contains Orange?"+ list.contains("Orange")); 
+        
+        list.clear();
+        System.out.println("Is empty?"+ list.isEmpty());
+        
+    }
+}
+```
+<img width="374" height="280" alt="image" src="https://github.com/user-attachments/assets/c2170e24-7a3d-4627-93c0-cc43a70a7072" />
+
+
+```
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+
+        // Push elements
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println("Stack: " + stack);
+
+        // Peek top element
+        System.out.println("Top element: " + stack.peek());
+
+        // Pop element
+        System.out.println("Removed: " + stack.pop());
+
+        System.out.println("Stack after pop: " + stack);
+    }
+}
+```
+<img width="368" height="223" alt="image" src="https://github.com/user-attachments/assets/544dc195-2fa6-4e49-87f4-1d340cf2cee4" />
+
+
+```
+import java.util.HashMap;
+
+public class Main1 {
+    public static void main(String[] args) {
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(1, "Apple");
+        map.put(2, "Banana");
+        map.put(3, "Mango");
+
+        System.out.println(map.get(2)); // Banana
+
+        map.remove(1);
+
+        System.out.println(map.containsKey(3)); // true
+    }
+}
+```
+<img width="370" height="183" alt="image" src="https://github.com/user-attachments/assets/7f5544c8-22f1-4662-af70-e83b565f1e8e" />
+
+
+```
+import java.util.Hashtable;
+
+public class Main1 {
+    public static void main(String[] args) {
+
+        Hashtable<Integer, String> ht = new Hashtable<>();
+
+        ht.put(10, "A");
+        ht.put(20, "B");
+
+        System.out.println(ht.get(10));
+    }
+}
+```
+<img width="376" height="170" alt="image" src="https://github.com/user-attachments/assets/9ba4f84f-fbc2-45ed-9020-b4ffdc7624c9" />
+
+### assi-23
+```
+
+interface Shape {
+    void area();
+}
+
+class Rectangle implements Shape {
+    int length = 10, breadth = 5;
+
+    public void area() {
+        System.out.println("Area of Rectangle = " + (length * breadth));
+    }
+}
+
+class Circle implements Shape {
+    int radius = 7;
+
+    public void area() {
+        System.out.println("Area of Circle = " + (3.14 * radius * radius));
+    }
+}
+
+public class InterfaceInheritance {
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle();
+        Circle c = new Circle();
+
+        r.area();
+        c.area();
+    }
+}
+```
+<img width="558" height="91" alt="image" src="https://github.com/user-attachments/assets/88cd740c-fafe-4934-afe4-2faf8d23e518" />
+
+```
+abstract class Shape {
+    abstract void area();
+
+    void display() {
+        System.out.println("Calculating Area...");
+    }
+}
+
+class Rectangle extends Shape {
+    int length = 10, breadth = 5;
+
+    void area() {
+        System.out.println("Area of Rectangle = " + (length * breadth));
+    }
+}
+
+class Circle extends Shape {
+    int radius = 7;
+
+    void area() {
+        System.out.println("Area of Circle = " + (3.14 * radius * radius));
+    }
+}
+
+public class AbstractInheritance {
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle();
+        Circle c = new Circle();
+
+        r.display();
+        r.area();
+
+        c.display();
+        c.area();
+    }
+}
+```
+<img width="553" height="90" alt="image" src="https://github.com/user-attachments/assets/66439441-92a8-4bf7-aeb8-3f69a56f3c72" />
+
+
 
 
 
