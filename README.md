@@ -1109,7 +1109,10 @@ public class Threadinter{
 
 ```
 <img width="363" height="733" alt="image" src="https://github.com/user-attachments/assets/43978f76-3d5a-438d-8214-e6c6aa832805" />
+
+
 ## assi-11
+
 ```
 import javax.swing.*;
 
@@ -1164,6 +1167,8 @@ public class Add {
 
 
 ## assi-12
+
+
 ```
 import javax.swing.*;
 import java.awt.event.*;
@@ -1331,7 +1336,9 @@ public class MatrixAdd {
 }
 ```
 <img width="857" height="616" alt="image" src="https://github.com/user-attachments/assets/296fc531-8481-4ad3-97b7-128a31a6d9f4" />
+
 ## assi-14
+
 ```
 import javax.swing.*;
 import java.awt.*;
@@ -1528,6 +1535,8 @@ public class RegistrationApp extends JFrame implements ActionListener {
 }
 ```
 <img width="605" height="693" alt="image" src="https://github.com/user-attachments/assets/43c73e40-9e22-44e0-801b-660b708da281" />
+
+
 ## assi-15
 ```
 import javax.swing.*;
@@ -1621,6 +1630,8 @@ public class ShapesDemo {
 }
 ```
 <img width="600" height="611" alt="image" src="https://github.com/user-attachments/assets/1465fee8-90ad-4c4a-b875-6381dfd3bfda" />
+
+
 ## assi-16
 ```
 import javax.swing.*;
@@ -1673,6 +1684,7 @@ public class PaintBrush extends JFrame {
 }
 ```
 <img width="733" height="613" alt="image" src="https://github.com/user-attachments/assets/c9c911f5-8a41-441b-8ddf-6a4384f92cfe" />
+
 
 ## assi-17
 ```
@@ -2036,7 +2048,7 @@ public class Main1 {
 ```
 <img width="376" height="170" alt="image" src="https://github.com/user-attachments/assets/9ba4f84f-fbc2-45ed-9020-b4ffdc7624c9" />
 
-### assi-23
+## assi-23
 ```
 
 interface Shape {
