@@ -30,29 +30,19 @@
 
 [Program 16- Just using mouse event create a frame like paint brush with selection of colour and width](#assi-16)
 
-[Program-17 Create a package of any 5 classes of your choice and import it.](#Assi-17)
+[Program-17 Create a package of any 5 classes of your choice and import it.](#assi-17)
 
-[Program-18 Create one package and sub package  import and test it.](#Assi-18)
+[Program-18 Create one package and sub package  import and test it.](#assi-18)
 
-[Program-19 Create one small array of size 5 apply array out of bounds exception using try catch give a proper message in catch and demonstrate the exception exactly in the same fashion demonstrate arithmetic exception.](#Assi-19)
+[Program-19 Create one small array of size 5 apply array out of bounds exception using try catch give a proper message in catch and demonstrate the exception exactly in the same fashion demonstrate arithmetic exception.](#assi-19)
 
-[Program-20 To test the range of age of one student.write a program using user defined exception.](#Assi-20)
+[Program-20 To test the range of age of one student.write a program using user defined exception.](assi-20)
 
-[Program-21 File Handling Programs (given in the PPT).](#Assi-21)
+[Program-21 File Handling Programs (given in the PPT).](#assi-21)
 
-[Program-22 Program to make an ArrayList and using various methods of LinkedList.](#Assi-22)
+[Program-22 Program to make an ArrayList and using various methods of LinkedList.](#assi-22)
 
-[Program-23 Inheritance Programs, using interface and abstract classes.](#Assi-23)
-
-
-
-
-
-
-
-
-
-
+[Program-23 Inheritance Programs, using interface and abstract classes.](#assi-23)
 
 
 ## assi-1
